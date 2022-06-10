@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace OS_2
             InitializeComponent();
             this.listView = listView;
             this.a = a;
+
         }
 
         private int countColcu(int[] a)
@@ -142,5 +144,18 @@ namespace OS_2
             }
             MessageBox.Show("读取成功！");
         }
+    }
+
+    class Order : IComparer
+    {
+        public int Compare(Object x, Object y)
+        {
+            int xx = int.Parse(((ListViewItem)x).SubItems[0].Text);
+            int yy = int.Parse(((ListViewItem)y).SubItems[0].Text);
+            if (xx < yy) return -1;
+            if (xx == yy) return 0;
+            else return 1;
+        }
+
     }
 }

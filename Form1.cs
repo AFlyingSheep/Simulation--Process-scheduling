@@ -22,6 +22,7 @@ namespace OS_2
                 a[i] = 0;
             }
             comboBox1.SelectedIndex = 0;
+            listView1.ListViewItemSorter = new Order();
         }
 
         private void button1_Click(object sender, EventArgs e)
